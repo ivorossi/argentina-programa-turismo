@@ -8,6 +8,7 @@
 </head>
 <body>
 	<jsp:include page="partials/navbar.jsp"></jsp:include>
+	
     <div class="container-fluid">
       <div class="row justify-content-center">
         <div class="col-12" >
@@ -20,7 +21,7 @@
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <div class="card bg-dark text-white">
-                  <img src="assets/img/dos.jpg" class="card-img"  alt="...">
+                  <img src="assets/img/dos.jpg" class="card-img"  style="max-height: 440px;">
                   <div class="card-img-overlay">
                     <h3 class="card-title">Card title</h3>
                     <h5 class="card-text">
@@ -30,10 +31,10 @@
                 </div>
               </div>
               <div class="carousel-item">
-                <img src="assets/img/dos.jpg" class= "img-fluid w-100">
+                <img src="assets/img/dos.jpg" class= "img-fluid w-100"  style="max-height: 440px;">
               </div>
               <div class="carousel-item">
-                <img src="assets/img/dos.jpg" class= "img-fluid w-100">
+                <img src="assets/img/dos.jpg" class= "img-fluid w-100"  style="max-height: 440px;">
               </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">

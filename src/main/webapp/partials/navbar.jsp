@@ -21,14 +21,14 @@
 					<li class="nav-item">
 						<a class="nav-link" href="#">contacto</a>
 					</li>
-					<c:if test="${!user.isNull() && user != null}}">
+					<c:if test="${!user.isNull() && user != null}">
 						<li class="nav-item">
-							<a class="nav-link" href="#">Productos</a>
+							<a class="nav-link" href="productolist.do">Productos</a>
 						</li>
 					</c:if>
 					<c:if test="${user.isAdm()}">
 						<li class="nav-item">
-							<a class="nav-link" href="#">Administracion</a>
+							<a class="nav-link" href="admin.do">Administracion</a>
 						</li>
 					</c:if>
 				</ul>
@@ -42,7 +42,16 @@
 								aria-expanded="false"> <c:out value = "${user.getNombre()}"/> </a>
 							<ul class="dropdown-menu dropdown-menu-end"
 								aria-labelledby="navbarDropdown">
-								<div class="dropdown-divider"></div>
+								<li>
+									<a class="dropdown-item disabled" style="color: black;">
+										<i title="monedas" style="color: gold;" class="bi bi-coin"></i> <c:out value="${user.presupuesto}"></c:out>
+									</a>
+								</li>
+								<li>
+									<a class="dropdown-item disabled" style="color: black;">
+										<i title="tiempo" style="color: blue;" class="bi bi-clock-fill"></i> <c:out value="${user.tiempoDisponible}h"></c:out>
+									</a>
+								</li><div class="dropdown-divider"></div>
 								<div class="d-grid gap-2">
 									<a href="/argentina-programa-turismo/logOutServlet" class="btn btn-danger btn-lg" 
 										role="button">Salir</a>

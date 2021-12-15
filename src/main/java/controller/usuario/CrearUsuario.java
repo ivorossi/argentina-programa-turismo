@@ -10,9 +10,10 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import model.Usuario;
+import model.nullObejt.NullUser;
 import service.UsuarioService;
 
-@WebServlet("/usuario/crear.do")
+@WebServlet("/crear")
 public class CrearUsuario extends HttpServlet implements Servlet {
 
 	private static final long serialVersionUID = -9102702480229297798L;
@@ -24,7 +25,7 @@ public class CrearUsuario extends HttpServlet implements Servlet {
 		super.init();
 		this.usarioService = new UsuarioService();
 	}
-	
+
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String nombre = req.getParameter("name");
 		String apellido = req.getParameter("lastname");
@@ -35,14 +36,13 @@ public class CrearUsuario extends HttpServlet implements Servlet {
 		String gusto = req.getParameter("gusto");
 		String code = req.getParameter("code");
 
-		Usuario user = usarioService.create(nombre, apellido, userName, password,  presupuesto, tiempo , gusto, code);
-		if (user.isValid()) {
-			resp.sendRedirect("/index.jsp");
+		Usuario user2 = usarioService.create(nombre, apellido, userName, password,  presupuesto, tiempo , gusto, code);
+		if (user2.isValid()) {
+			resp.sendRedirect("/argentina-programa-turismo/index.jsp");
 		} else {
-			req.setAttribute("user", user);
+			req.setAttribute("user2", user2);
 
-			RequestDispatcher dispatcher = getServletContext()
-					.getRequestDispatcher("/registro.jsp");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/registro.jsp");
 			dispatcher.forward(req, resp);
 		}
 

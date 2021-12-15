@@ -14,37 +14,37 @@
 </div>
 <div class="col-md-6">
 	<label for="userName"
-		class='col-form-label ${user.errors.get("userName") != null ? "is-invalid" : "" }'>Usuario:</label>
+		class='col-form-label'>Usuario:</label>
 	<input class="form-control" type="text" id="userName" name="userName"
-		required value="${user.getUsuario}"></input>
+		required value="${user2.usuario}"></input>
 
 </div>
 <div class="col-md-6">
 	<label for="password"
-		class='col-form-label ${user.errors.get("password") != null ? "is-invalid" : "" }'>Contraseña:</label>
+		class='col-form-label'>Contraseña:</label>
 	<input class="form-control" type="password" id="password"
-		name="password" required value="${user.password}"></input>
+		name="password" required value="${user.contrasenia}"></input>
 	<div class="invalid-feedback">
-		<c:out value='${user.errors.get("password")}'></c:out>
+		<c:out value='${user2.contrasenia}'></c:out>
 	</div>
 </div>
 
 <div class="col-md-4">
 	<label for="monedas"
-		class='col-form-label ${user.errors.get("monedas") != null ? "is-invalid" : "" }'>Monedas:</label>
+		class='col-form-label ${user2.errors.get("presupuesto") != null ? "is-invalid" : "" }'>Monedas:</label>
 	<input class="form-control" type="number" id="monedas" name="monedas"
-		required value="${user.monedas}"></input>
+		required value="${user2.presupuesto}"></input>
 	<div class="invalid-feedback">
-		<c:out value='${user.errors.get("monedas")}'></c:out>
+		<c:out value='${user2.errors.get("presupuesto")}'></c:out>
 	</div>
 </div>
 <div class="col-md-4">
 	<label for="tiempoDisponible"
-		class='col-form-label ${user.errors.get("tiempoDisponible") != null ? "is-invalid" : "" }'>Tiempo:</label>
+		class='col-form-label ${user2.errors.get("tiempo") != null ? "is-invalid" : "" }'>Tiempo:</label>
 	<input class="form-control" type="number" id="tiempoDisponible"
-		name="tiempoDisponible" required value="${user.tiempoDisponible}"></input>
+		name="tiempoDisponible" required value="${user2.tiempoDisponible}"></input>
 	<div class="invalid-feedback">
-		<c:out value='${user.errors.get("tiempoDisponible")}'></c:out>
+		<c:out value='${user2.errors.get("tiempo")}'></c:out>
 	</div>
 </div>
 <div class="col-md-4">
@@ -58,12 +58,9 @@
 
 <div class="col-md-6">
 	<label for="code"
-		class='col-form-label ${user.errors.get("code") != null ? "is-invalid" : "" }'>Capchat:</label>
+		class='col-form-label' >Capchat:</label>
 	<input class="form-control" type="text" id="code" name="code" required
 		value=""></input>
-	<div class="invalid-feedback">
-		<c:out value='${user.errors.get("code")}'></c:out>
-	</div>
 </div>
 <div class="col-md-4 py-4">
 	<img src="assets/img/capchat.png" >

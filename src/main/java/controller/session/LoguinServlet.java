@@ -34,11 +34,11 @@ public class LoguinServlet extends HttpServlet implements Servlet {
 		if(user.isNull()) {
 			
     		req.setAttribute("flash", "Usuario o contraseña incorrectos");
-    		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
+    		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/argentina-programa-turismo/index.jsp");
       		dispatcher.forward(req, resp);
 		}else {
     		req.getSession().setAttribute("user", user);
-    		resp.sendRedirect("index.jsp"); 
+    		resp.sendRedirect("/argentina-programa-turismo/index.jsp"); 
     		
 			
 		}

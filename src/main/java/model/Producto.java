@@ -4,7 +4,7 @@ import exceptions.ExcepcionDeProducto;
 import enums.TiposDeAtraccion;
 
 public abstract class  Producto   {
-	
+	private String refImg, descripcion;
 	private int idProducto;
 	private String nombreDeProducto;
 	private String tipoDeProducto;
@@ -113,6 +113,14 @@ public abstract class  Producto   {
 		} else if (!tipoDeProducto.equals(other.tipoDeProducto))
 			return false;
 		return true;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public String getRefImg() {
+		return refImg;
 	}
 	
 

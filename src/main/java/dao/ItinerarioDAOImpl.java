@@ -21,7 +21,7 @@ public class ItinerarioDAOImpl {
 	public int agregar(Usuario visitante) {
 		int cambios = 0;
 		try {
-			for (Producto elemento : visitante.getItinerario()) {
+			for (Producto elemento : visitante.getItinerario().getProductosDelUsuario()) {
 
 				PreparedStatement statement = this.consulta(
 						"INSERT INTO itinerario" + "(  usuario, id_atraccion, id_promocion) VALUES ( ?, ?, ?)");

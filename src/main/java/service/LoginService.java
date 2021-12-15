@@ -5,10 +5,15 @@ import model.Usuario;
 import model.nullObejt.NullUser;
 
 public class LoginService {
+	UsuarioDAOImpl userDAO = new UsuarioDAOImpl();
+	
+	public Usuario reload(String username) {
+		 Usuario user =userDAO.buscar(username);
+		 return user;
+	}
 	
 	public Usuario login(String username, String password) {
 		
-		UsuarioDAOImpl userDAO = new UsuarioDAOImpl();
 		Usuario user =userDAO.buscar(username);
 		
 		if(user == null || !user.verificarContrasenia(password)) {

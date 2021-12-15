@@ -1,11 +1,10 @@
 package model;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Usuario {
-	private boolean adm = false;
+	private boolean adm = true;
 	private String usuario, contrasenia;
 	private String nombre;
 	private String gusto;
@@ -32,11 +31,11 @@ public class Usuario {
 	public void validate() {
 		errores = new HashMap<String, String>();
 
-		if (this.presupuesto <= 0) 
-			errores.put("cost", "Debe ser positivo");
+		if (this.presupuesto < 0) 
+			errores.put("presupuesto", "Debe ser positivo");
 
-		if (this.tiempoDisponible <= 0) 
-			errores.put("duration", "Debe ser positivo");
+		if (this.tiempoDisponible < 0) 
+			errores.put("tiempo", "Debe ser positivo");
 	}
 	
 	public Map<String, String> getErrors() {
@@ -92,8 +91,8 @@ public class Usuario {
 				+ " monedas y tu tiempo libre es de: " + tiempoDisponible + "hs;";
 	}
 
-	public  ArrayList<Producto >getItinerario() {
-		return this.itinerarioDelUsuario.getProductosDelUsuario();
+	public  Itinerario getItinerario() {
+		return this.itinerarioDelUsuario;
 	}
 	
 	public boolean loPuedoComprar(Producto haComprar) {

@@ -36,7 +36,7 @@ public class PromoAxB extends Promo {
 
 	@Override
 	public String getDescuento() {
-		return this.atraccionGratis;
+		return this.atraccionGratis + " gratis.";
 	}
 
 }
