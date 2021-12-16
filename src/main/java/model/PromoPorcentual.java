@@ -17,6 +17,23 @@ public class PromoPorcentual extends Promo {
 		this.descuento = descuento;
 		this.aplicarDescuento();
 	}
+	
+	public PromoPorcentual( String nombreDeProducto, String tipoDeProducto, 
+			double descuento, ArrayList<Atraccion> atracciones, String descripcion, String url){
+
+		super(nombreDeProducto, tipoDeProducto, atracciones, descripcion, url);
+		
+		this.descuento = descuento;
+		this.aplicarDescuento();
+	}
+	public PromoPorcentual( int id, String nombreDeProducto, String tipoDeProducto, 
+			double descuento, ArrayList<Atraccion> atracciones, String descripcion, String url){
+
+		super(id, nombreDeProducto, tipoDeProducto, atracciones, descripcion, url);
+		
+		this.descuento = descuento;
+		this.aplicarDescuento();
+	}
 
 	private void aplicarDescuento() {
 		super.costoTotal -= (int) Math.round(super.getCostoTotal() * (this.descuento / 100));

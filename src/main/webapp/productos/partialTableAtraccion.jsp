@@ -22,7 +22,16 @@
 				<td><c:out value="${atraccion.costoTotal}"></c:out></td>
 				<td><c:out value="${atraccion.timepoDeProducto}"></c:out></td>
 				<td><c:out value="${atraccion.cupo}"></c:out></td>
-				<td>ad</td>
+				<td>
+					<a href="/argentina-programa-turismo/editarAtraccion.do?nombre=${atraccion.nombreDeProducto}" class="btn btn-light rounded-0 " role="button">
+						<i class="bi bi-pencil-fill"></i>
+					</a>		
+				</td>
+				<td>
+					<a href="/argentina-programa-turismo/eliminarAtraccion.do?nombre=${atraccion.nombreDeProducto}" class="btn btn-danger rounded " role="button">
+						<i class="bi bi-x-circle-fill"></i>
+					</a>
+				</td>
 			</tr>
 		</c:forEach>
 	</tbody>

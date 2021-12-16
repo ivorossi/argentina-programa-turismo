@@ -24,8 +24,8 @@ public class AtraccionesDePromoDAOImpl {
 			for (Atraccion elemento : promocion.getAtracciones()) {
 
 				PreparedStatement statement = this.consulta
-						("INSERT INTO promocion_atraccion" + "(  id_promocion, id_atraccion) VALUES ( ?, ?)");
-				statement.setInt(1, promocion.getIdProducto());
+						("INSERT INTO promocion_atraccion" + "(  nombre_promo , id_atraccion) VALUES ( ?, ?)");
+				statement.setString(1, promocion.getNombreDeProducto());
 				statement.setInt(2, elemento.getIdProducto());
 				cambios = statement.executeUpdate();
 			}
@@ -46,8 +46,8 @@ public class AtraccionesDePromoDAOImpl {
 	protected int borrar(Promo promocion) {
 		int cambios = 0;
 		try {
-			PreparedStatement statement = this.consulta("DELETE FROM promocion_atraccion WHERE id_promocion =?");
-			statement.setInt(1, promocion.getIdProducto());
+			PreparedStatement statement = this.consulta("DELETE FROM promocion_atraccion WHERE nombre_promo =?");
+			statement.setString(1, promocion.getNombreDeProducto());
 			cambios = statement.executeUpdate();
 		} catch (Exception e) {
 			System.out.println(e);
@@ -55,14 +55,14 @@ public class AtraccionesDePromoDAOImpl {
 		return cambios;
 	}
 
-	public ArrayList<Atraccion> buscar(int key) {
+	public ArrayList<Atraccion> buscar(String nombre) {
 		AtraccionDAOImpl atraccion = new AtraccionDAOImpl();
 		ArrayList<Atraccion> atracciones = new ArrayList<Atraccion>();
 		try {
 			PreparedStatement statement = this.consulta("SELECT atraccion.nombre" + " FROM promocion_atraccion"
 					+ " JOIN atraccion ON atraccion.id_atraccion = promocion_atraccion.id_atraccion"
-					+ " WHERE id_promocion = ?");
-			statement.setInt(1, key);
+					+ " WHERE nombre_promo = ?");
+			statement.setString(1, nombre);
 			ResultSet resultados = statement.executeQuery();
 			while (resultados.next()) {
 				atracciones.add(atraccion.buscar(resultados.getString(1)));

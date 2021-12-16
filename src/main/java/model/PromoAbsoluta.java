@@ -8,12 +8,30 @@ public class PromoAbsoluta extends Promo {
 	
 	private int costoDePromo;
 
+	
 	public PromoAbsoluta(int idProducto, String nombreDeProducto, String tipoDeProducto, 
 			int costoDePromo, ArrayList<Atraccion> atracciones) throws ExcepcionDeProducto {
 
 		super(idProducto,nombreDeProducto, tipoDeProducto, atracciones);
 		if (costoDePromo <= 0)
 			throw new ExcepcionDeProducto(costoDePromo + ": se esperan un costo de promo mayor a 0");
+
+		this.costoDePromo = costoDePromo;
+		this.aplicarDescuento();
+	}
+
+	public PromoAbsoluta( String nombreDeProducto, String tipoDeProducto, int costoDePromo, ArrayList<Atraccion> atracciones, 
+			String descripcion, String url) {
+
+		super(nombreDeProducto, tipoDeProducto, atracciones, descripcion, url );
+
+		this.costoDePromo = costoDePromo;
+		this.aplicarDescuento();
+	}
+	public PromoAbsoluta( int id, String nombreDeProducto, String tipoDeProducto, int costoDePromo, ArrayList<Atraccion> atracciones, 
+			String descripcion, String url) {
+
+		super(nombreDeProducto, tipoDeProducto, atracciones, descripcion, url );
 
 		this.costoDePromo = costoDePromo;
 		this.aplicarDescuento();

@@ -1,6 +1,10 @@
 package model;
 
 import exceptions.ExcepcionDeProducto;
+
+import java.util.HashMap;
+import java.util.Map;
+
 import enums.TiposDeAtraccion;
 
 public abstract class  Producto   {
@@ -10,12 +14,44 @@ public abstract class  Producto   {
 	private String tipoDeProducto;
 	protected int costoTotal;
 	protected double timepoDeProducto;
+	protected Map<String, String> errors;
 	
-
 	public Producto(int idProducto, String nombreDeProducto, String tipoDeProducto) {
 		this.idProducto = idProducto;
 		this.nombreDeProducto = nombreDeProducto;
 		this.tipoDeProducto = tipoDeProducto;
+	}
+	public Producto( String nombreDeProducto, String tipoDeProducto, String descripcion, String url) {
+		this.nombreDeProducto = nombreDeProducto;
+		this.tipoDeProducto = tipoDeProducto;
+		this.descripcion= descripcion;
+		this.refImg = url;
+	}
+	public Producto(int id, String nombreDeProducto, String tipoDeProducto, String descripcion, String url) {
+		this.nombreDeProducto = nombreDeProducto;
+		this.tipoDeProducto = tipoDeProducto;
+		this.descripcion= descripcion;
+		this.refImg = url;
+		this.idProducto = id;
+	}
+	public Producto(String nombre, int costoToltal,  double duracion, String  tipo, String descipcion,String url) {
+		this.nombreDeProducto = nombre;
+		this.costoTotal = costoToltal;
+		this.timepoDeProducto = duracion;
+		this.tipoDeProducto = tipo;
+		this.descripcion = descipcion;
+		this.refImg = url;
+		
+	}
+	public Producto(int id, String nombre, int costoToltal,  double duracion, String  tipo, String descipcion,String url) {
+		this.idProducto = id;
+		this.nombreDeProducto = nombre;
+		this.costoTotal = costoToltal;
+		this.timepoDeProducto = duracion;
+		this.tipoDeProducto = tipo;
+		this.descripcion = descipcion;
+		this.refImg = url;
+		
 	}
 
 	public Producto(int idProducto, String nombreDeProducto, String tipoDeProducto, int costoTotal, double tiempoDeProducto)
@@ -33,6 +69,25 @@ public abstract class  Producto   {
 		this.tipoDeProducto = tipoDeProducto;
 		this.costoTotal = costoTotal;
 		this.timepoDeProducto = tiempoDeProducto;
+	}
+	public boolean isValid() {
+		validate();
+		return errors.isEmpty();
+	}
+	
+	public void validate() {
+		errors = new HashMap<String, String>();
+
+		if (this.costoTotal <= 0) {
+			errors.put("cost", "Debe ser positivo");
+		}
+		if (this.timepoDeProducto <= 0) {
+			errors.put("duration", "Debe ser positivo");
+		}
+	}
+	
+	public Map<String, String> getErrors() {
+		return errors;
 	}
 
 	public abstract boolean esPromo();

@@ -51,22 +51,6 @@ public class UsuarioDAOImpl extends GenericDAO<Usuario> {
 	}
 
 	@Override
-	public int borrar(Usuario visitante) {
-		int cambios = 0;
-		try {
-			PreparedStatement statement = super.consulta("DELETE FROM visitante WHERE usuario =?");
-			statement.setString(1, visitante.getUsuario());
-			cambios = statement.executeUpdate();
-			ItinerarioDAOImpl itinerario =new ItinerarioDAOImpl(); 
-			cambios += itinerario.borrar(visitante);
-		} catch (Exception e) {
-			System.out.println(e);
-
-		}
-		return cambios;
-	}
-
-	@Override
 	public String consultaDeContarTodos() {
 		return "SELECT count(1) AS total FROM visitante";
 	}
@@ -87,5 +71,10 @@ public class UsuarioDAOImpl extends GenericDAO<Usuario> {
 			return new Usuario(resultados.getString(1), resultados.getString(2), resultados.getString(3),
 					resultados.getString(4), resultados.getInt(5), resultados.getDouble(6));
 
+	}
+
+	@Override
+	protected String consultaDeBorrar() {
+		return "UPDATE visitante SET borrar =?  WHERE nombre =?";
 	}
 }

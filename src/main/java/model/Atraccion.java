@@ -14,6 +14,24 @@ public  class Atraccion extends Producto {
 
 		this.cupo = cupo;
 	}
+	public Atraccion(String nombre, int costoToltal,  double duracion, int cupo, String  tipo, String descipcion, String url) {
+		
+		super(   nombre,  costoToltal,   duracion,   tipo,  descipcion, url);
+		this.cupo = cupo;
+	}
+	
+	public Atraccion(int id, String nombre, int costoToltal,  double duracion, int cupo, String  tipo, String descipcion, String url) {
+		
+		super(id, nombre,  costoToltal,   duracion,   tipo,  descipcion, url);
+		this.cupo = cupo;
+	}
+	
+	public void validate() {
+		super.validate();
+		if (cupo <= 0) {
+			errors.put("capacity", "Debe ser positivo");
+		}
+	}
 
 	@Override
 	public boolean hayCupo() {

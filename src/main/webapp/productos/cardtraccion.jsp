@@ -3,7 +3,7 @@
 
 <c:forEach items="${productos}" var="producto">
 	<div class="card mx-5 my-3 col-md-5 shadow-lg bg-success bg-opacity-25 p-0 ">
-		<img src="assets/img/uno.jpg" class="card-img-top">
+		<img src="${producto.refImg}" class="card-img-top">
 		<div class="card-body">
 			<h5 class="card-title">
 				<c:out value="${producto.getNombreDeProducto()}"></c:out>

@@ -5,10 +5,21 @@ import java.util.ArrayList;
 public abstract class Promo extends Producto {
 
 	protected ArrayList<Atraccion> atracciones;
-
 	public Promo(int id_producto, String nombreDeProducto, String tipoDeProducto, ArrayList<Atraccion> atracciones) {
 
 		super(id_producto, nombreDeProducto, tipoDeProducto);
+		this.atracciones = atracciones;
+		this.costoDraucionDePromo();
+	}
+	public Promo( String nombreDeProducto, String tipoDeProducto, ArrayList<Atraccion> atracciones, String descripcion, String url) {
+
+		super( nombreDeProducto, tipoDeProducto, descripcion, url);
+		this.atracciones = atracciones;
+		this.costoDraucionDePromo();
+	}
+	public Promo( int id, String nombreDeProducto, String tipoDeProducto, ArrayList<Atraccion> atracciones, String descripcion, String url) {
+
+		super( id, nombreDeProducto, tipoDeProducto, descripcion, url);
 		this.atracciones = atracciones;
 		this.costoDraucionDePromo();
 	}

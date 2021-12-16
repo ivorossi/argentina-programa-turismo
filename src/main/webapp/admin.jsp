@@ -31,6 +31,9 @@
       </h2>
       <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
         <div class="accordion-body">
+        	<div class="d-grid gap-2">
+				<a href="/argentina-programa-turismo/crearAtraccion.do" class="btn btn-success btn-lg" role="button">+ Crear Atraccion</a>
+			</div>
           <jsp:include page="productos/partialTableAtraccion.jsp"></jsp:include>
         </div>
       </div>
@@ -43,6 +46,9 @@
       </h2>
       <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
         <div class="accordion-body">
+            <div class="d-grid gap-2">
+				<a href="/argentina-programa-turismo/crearPromocion.do" class="btn btn-success btn-lg" role="button">+ Crear Promocion</a>
+			</div>
           <jsp:include page="productos/partialTablePromo.jsp"></jsp:include>
         </div>
       </div>

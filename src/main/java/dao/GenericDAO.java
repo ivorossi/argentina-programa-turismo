@@ -58,12 +58,24 @@ public abstract class GenericDAO<T> {
 		}
 		return objeto;
 	}
+	public int borrar(String unique) {
+		int cambios = 0;
+		try {
+			PreparedStatement statement = this.consulta(consultaDeBorrar());
+			statement.setInt(1, 1);
+			statement.setString(2, unique);
+			cambios = statement.executeUpdate();
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return cambios;
+	}
 
 	protected abstract int agregar(T t);
 
 	protected abstract int modificar(T t);
 
-	protected abstract int borrar(T t);
+	protected abstract String consultaDeBorrar();
 
 	protected abstract String consultaDeBuscar();
 
