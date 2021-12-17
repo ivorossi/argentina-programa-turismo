@@ -6,53 +6,87 @@
 <head>
 	<jsp:include page="partials/head.jsp"></jsp:include>
 </head>
-<body>
-	<jsp:include page="partials/navbar.jsp"></jsp:include>
+<body class= "bg">
+	<header>
+		<jsp:include page="partials/navbar.jsp"></jsp:include>
+	</header>
+	<jsp:include page="partials/carruselInicio.jsp"></jsp:include>
+	<br>
+	<h1 Class="text-center">Sitios que podes visitar</h1>
+	<div class="row">
+	<div class="card mx-5 my-3 col-md-5 shadow-lg bg-success bg-opacity-25 p-0 ">
+		<img src="https://picsv3-b.pxsol.com/1154/company/library/user/17756897026a41df8b66bf46b82b7c0708666be1ae1.jpg?auto=format&ixlib=php-3.3.0&s=b55e1f11cfcd46f91fa972c297886195" class="card-img-top">
+		<div class="card-body">
+			<h5 class="card-title">
+				Los reyunos
+			</h5>
+			<p class="card-text text-decoration-underline fw-bold">
+				 
+			</p>
+		</div>	
+	</div>
+	<div class="card mx-5 my-3 col-md-5 shadow-lg bg-success bg-opacity-25 p-0 ">
+		<img src="http://www.losreyunossanrafael.com.ar/images/top3.jpg" class="card-img-top">
+		<div class="card-body">
+			<h5 class="card-title">
+				El tigre
+			</h5>
+			<p class="card-text text-decoration-underline fw-bold">
+				 
+			</p>
+		</div>	
+	</div>	
+	<div class="card mx-5 my-3 col-md-5 shadow-lg bg-success bg-opacity-25 p-0 ">
+		<img src="https://img.lavoz.com.ar/sites/default/files/styles/landscape_1170_658/public/nota_periodistica/8.1_7.jpg" class="card-img-top">
+		<div class="card-body">
+			<h5 class="card-title">
+				El Niuhil
+			</h5>
+			<p class="card-text text-decoration-underline fw-bold">
+				 
+			</p>
+		</div>	
+	</div>
+	<div class="card mx-5 my-3 col-md-5 shadow-lg bg-success bg-opacity-25 p-0 ">
+		<img src="https://www.welcomeargentina.com/paseos/paredones_del_atuel/nihuil-atuel-1.jpg" class="card-img-top">
+		<div class="card-body">
+			<h5 class="card-title">
+				Cañon Del atuel
+			</h5>
+			<p class="card-text text-decoration-underline fw-bold">
+				 
+			</p>
+		</div>	
+	</div>
+
+	<div class="card mx-5 my-3 col-md-5 shadow-lg bg-success bg-opacity-25 p-0 ">
+		<img src="https://mensajero.com.ar/wp-content/uploads/2020/08/ca%C3%B1on-del-atuel.jpg" class="card-img-top">
+		<div class="card-body">
+			<h5 class="card-title">
+				Valle Grande
+			</h5>
+			<p class="card-text text-decoration-underline fw-bold">
+				 
+			</p>
+		</div>	
+	</div>
+
+	<div class="card mx-5 my-3 col-md-5 shadow-lg bg-success bg-opacity-25 p-0 ">
+		<img src="https://mendoza-camara.org/wp-content/uploads/2016/08/Sierra-Pintada-San-Rafael.jpg" class="card-img-top">
+		<div class="card-body">
+			<h5 class="card-title">
+				Sierra pintada
+			</h5>
+			<p class="card-text text-decoration-underline fw-bold">
+				 
+			</p>
+		</div>	
+	</div>
+
+	</div>
 	
-    <div class="container-fluid">
-      <div class="row justify-content-center">
-        <div class="col-12" >
-          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" >
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="card bg-dark text-white">
-                  <img src="assets/img/dos.jpg" class="card-img"  style="max-height: 440px;">
-                  <div class="card-img-overlay">
-                    <h3 class="card-title">Card title</h3>
-                    <h5 class="card-text">
-                      This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                    </h5>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="assets/img/dos.jpg" class= "img-fluid w-100"  style="max-height: 440px;">
-              </div>
-              <div class="carousel-item">
-                <img src="assets/img/dos.jpg" class= "img-fluid w-100"  style="max-height: 440px;">
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-        </div>
-      </div>
-   </div> 
-   <div class="container">
-    <p> ah re</p>
-   </div>
 
-
+	
+	
   </body>
 </html>

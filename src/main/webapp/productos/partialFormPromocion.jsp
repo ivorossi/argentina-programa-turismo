@@ -23,7 +23,7 @@
 	<h5 Class=" text-center">Elija el tipo del producto</h5><br>
 	<div class="form-check">
  	 	<input class="form-check-input" type="radio" name="tipoDeProducto" Value= "aventura">
- 	 	<label class="form-check-label" for="flexRadioDefault1"> AVentura </label>
+ 	 	<label class="form-check-label" for="flexRadioDefault1"> Aventura </label>
 	</div>
 	<br>
 	<div class="form-check">

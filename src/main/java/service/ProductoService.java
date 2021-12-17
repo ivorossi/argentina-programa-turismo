@@ -87,7 +87,7 @@ public class ProductoService {
 			promocion = new PromoAxB(nombre, tipoDeProducto, descuento ,atraccionesDePromo,descripcion, url);
 
 		}
-		if (tipoDePromo.equalsIgnoreCase("procentual")) {
+		if (tipoDePromo.equalsIgnoreCase("porcentual")) {
 			int oferta = Integer.parseInt(descuento);
 			promocion = new PromoPorcentual(nombre, tipoDeProducto, oferta,atraccionesDePromo,descripcion, url);
 		}
@@ -118,7 +118,7 @@ public class ProductoService {
 			promocion = new PromoAxB(idPromo, nombre, tipoDeProducto, descuento ,atraccionesDePromo,descipcion, url);
 
 		}
-		if (tipoDePromo.equalsIgnoreCase("procentual")) {
+		if (tipoDePromo.equalsIgnoreCase("porcentual")) {
 			int oferta = Integer.parseInt(descuento);
 			promocion = new PromoPorcentual(idPromo, nombre, tipoDeProducto, oferta,atraccionesDePromo,descipcion, url);
 		}

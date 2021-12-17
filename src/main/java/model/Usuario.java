@@ -4,14 +4,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Usuario {
-	private boolean adm = true;
+	private boolean adm = false;
 	private String usuario, contrasenia;
-	private String nombre;
+	private String nombre, apellido;
 	private String gusto;
 	private int presupuesto;
 	private double tiempoDisponible;
 	private Itinerario itinerarioDelUsuario;
 	private Map<String, String> errores;
+	
 	public Usuario(String usuario, String contrasenia, String nombre, String gusto, 
 					int presupuesto, double tiempoDisponible) {
 		
@@ -21,6 +22,21 @@ public class Usuario {
 		this.presupuesto = presupuesto;
 		this.usuario = usuario;
 		this.contrasenia = contrasenia; 
+		this.itinerarioDelUsuario = new Itinerario(usuario);
+	}
+	public Usuario(String nombre, String apellido, String usuario, String contrasenia, int monedas,
+			Double tiempoDisp, String gusto, String code) {
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.usuario = usuario;
+		this.contrasenia = contrasenia;
+		this.presupuesto = monedas;
+		this.tiempoDisponible =tiempoDisp;
+		this.gusto = gusto;
+		if(code!=null)
+		if(code.equalsIgnoreCase("true")||code.equalsIgnoreCase("1")){
+			this.adm = true;
+		}
 		this.itinerarioDelUsuario = new Itinerario(usuario);
 	}
 	public boolean isValid() {
@@ -100,6 +116,9 @@ public class Usuario {
 		return (this.getTiempoDisponible() >= haComprar.getTimepoDeProducto()
 				&& this.getPresupuesto() >= haComprar.getCostoTotal() && haComprar.hayCupo()
 				&& !this.itinerarioDelUsuario.estaComprado(haComprar));
+	}
+	public String getApellido() {
+		return apellido;
 	}
 	
 }

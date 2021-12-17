@@ -46,7 +46,7 @@ public class PromoPorcentual extends Promo {
 
 	@Override
 	public String getTipoDePromo() {
-		return "procentual";
+		return "porcentual";
 	}
 
 	@Override

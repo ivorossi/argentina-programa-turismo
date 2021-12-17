@@ -10,7 +10,7 @@
 	<header>
 		<jsp:include page="partials/navbar.jsp"></jsp:include>
 	</header>
-	<h1 class="text-center">Ah comprar</h1>
+	<h1 class="text-center">Actividades y Promociones</h1>
 	<div class="row container-fluid">
 		<jsp:include page="productos/cardtraccion.jsp"></jsp:include>
 	</div>

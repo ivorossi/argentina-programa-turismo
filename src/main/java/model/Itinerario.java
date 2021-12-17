@@ -23,7 +23,8 @@ public class Itinerario {
 	}
 
 	public boolean estaComprado(Producto haComprar) {
-		
+		if(this.productosDelusuario.isEmpty())
+			return false;
 		for (Producto yaComprados : productosDelusuario) {
 			
 			if (yaComprados.esPromo()) {
@@ -37,6 +38,21 @@ public class Itinerario {
 			
 		}
 		return false;
+	}
+	
+	public int costoTotal() {
+		int costoTotal = 0;
+		for(Producto elemento : this.productosDelusuario) {
+			costoTotal += elemento.getCostoTotal();
+		}
+		return costoTotal;
+	}
+	public double tiempoTotal() {
+		double tiempoTotal = 0;
+		for(Producto elemento : this.productosDelusuario) {
+			tiempoTotal += elemento.getTimepoDeProducto();
+		}
+		return tiempoTotal;
 	}
 
 	private String toStrigDeOroductos() {

@@ -3,10 +3,6 @@ package dao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-
-import exceptions.ExcepcionDeProducto;
-import model.Atraccion;
 import model.Promo;
 import model.PromoAbsoluta;
 import model.PromoAxB;
@@ -24,8 +20,8 @@ public class PromocionDAOImpl extends GenericDAO<Promo> {
 			statement.setString(2, promocion.getTipoDePromo());
 			statement.setString(3, promocion.getDescuento());
 			statement.setString(4, promocion.getTipoDeProducto());
-			statement.setString(5, promocion.getDescuento());
-			statement.setString(6, promocion.getTipoDeProducto());
+			statement.setString(5, promocion.getDescripcion());
+			statement.setString(6, promocion.getRefImg());
 			cambios += statement.executeUpdate();
 			AtraccionesDePromoDAOImpl atraccionDePromo = new AtraccionesDePromoDAOImpl();
 			cambios = atraccionDePromo.agregar(promocion);
@@ -92,10 +88,12 @@ public class PromocionDAOImpl extends GenericDAO<Promo> {
 				return new PromoAxB(resultados.getInt(1), resultados.getString(2), resultados.getString(5),
 						resultados.getString(4), atraccionDePromo.buscar(resultados.getString(2)), resultados.getString(6), resultados.getString(7) );
 			}
-			if (resultados.getString(3).equalsIgnoreCase("absoluta")) {
+			if (resultados.getString(3).equalsIgnoreCase("porcentual")) {
 				return new PromoPorcentual(resultados.getInt(1), resultados.getString(2), resultados.getString(5),
 						Double.parseDouble(resultados.getString(4)), atraccionDePromo.buscar(resultados.getString(2)), resultados.getString(6), resultados.getString(7) );
 			}
+			
+			System.out.println();
 
 		return null;
 	}

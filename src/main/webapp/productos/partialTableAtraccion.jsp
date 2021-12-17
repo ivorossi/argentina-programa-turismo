@@ -1,7 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%int i = 0;%>
 
-<table class="table">
+<table class="table table-success table-striped p-5">
 	<thead>
 		<tr>
 			<th scope="col">#</th>
@@ -10,6 +10,8 @@
 			<th scope="col">Costo</th>
 			<th scope="col">Duracion</th>
 			<th scope="col">Cupo</th>
+			<th scope="col">Editar</th>
+			<th scope="col">Borrar?</th>
 		</tr>
 	</thead>
 	<tbody>

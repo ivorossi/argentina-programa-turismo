@@ -1,6 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<table class="table">
+<table class="table table-success table-striped p-5">
 	<thead>
 		<tr>
 			<th scope="col">#</th>
@@ -10,6 +10,9 @@
 			<th scope="col">Costo</th>
 			<th scope="col">Duracion</th>
 			<th scope="col">Atracciones Incluidas:</th>
+			<th scope="col">Descuento:</th>
+			<th scope="col">Editar</th>
+			<th scope="col">Borrar?</th>
 		</tr>
 	</thead>
 <%int i = 0;%>

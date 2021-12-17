@@ -10,8 +10,8 @@
 	<header>
 		<jsp:include page="partials/navbar.jsp"></jsp:include>
 	</header>
-	<div class="accordion" id="accordionPanelsStayOpenExample">
-    <div class="accordion-item">
+	<div class="accordion shadow-lg bg-success bg-opacity-50 p-4" id="accordionPanelsStayOpenExample">
+    <div class="accordion-item shadow-lg bg-success bg-opacity-50 p-4">
       <h2 class="accordion-header" id="panelsStayOpen-headingOne">
         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
           Usuarios
@@ -19,11 +19,14 @@
       </h2>
       <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
         <div class="accordion-body">
-          <jsp:include page="usuario/partialTableUser.jsp"></jsp:include>
+           	<div class="d-grid gap-2">
+				<a href="/argentina-programa-turismo/crearUsuario.do" class="btn btn-success btn-lg" role="button">+ Crear Usuario</a>
+			</div>
+          	<jsp:include page="usuario/partialTableUser.jsp"></jsp:include>
         </div>
       </div>
     </div>
-    <div class="accordion-item">
+    <div class="accordion-item shadow-lg bg-success bg-opacity-50 p-4">
       <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
           Atracciones
@@ -38,7 +41,7 @@
         </div>
       </div>
     </div>
-    <div class="accordion-item">
+    <div class="accordion-item shadow-lg bg-success bg-opacity-50 p-4">
       <h2 class="accordion-header" id="panelsStayOpen-headingThree">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
           Promociones
@@ -53,7 +56,7 @@
         </div>
       </div>
     </div>
-    <div class="accordion-item">
+    <div class="accordion-item shadow-lg bg-success bg-opacity-50 p-4">
       <h2 class="accordion-header" id="panelsStayOpen-headingfour">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapsefour" aria-expanded="false" aria-controls="panelsStayOpen-collapsefour">
           Carrusel de inicio
@@ -65,7 +68,7 @@
         </div>
       </div>
     </div>
-    <div class="accordion-item">
+    <div class="accordion-item shadow-lg bg-success bg-opacity-50 p-4">
       <h2 class="accordion-header" id="panelsStayOpen-headingfive">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapsefive" aria-expanded="false" aria-controls="panelsStayOpen-collapsefive">
           Lugares de inicio

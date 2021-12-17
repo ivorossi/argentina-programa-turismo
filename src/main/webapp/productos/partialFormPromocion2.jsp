@@ -19,14 +19,14 @@
 	<c:when test = '${tipoDePromo.equalsIgnoreCase("AxB")}'>
 		<div class="col-md-6">
 			<label for="userName" class='col-form-label'>Descuento:</label>
-			<input class="form-control" type="text" id="descuento" name="descuento" required value="${promocion.nombreDeProducto}"></input>
+			<input class="form-control" type="text" id="descuento" name="descuento" required value="${promocion.descuento}"></input>
 		</div>	
    	</c:when>
          
 	<c:when test = '${tipoDePromo.equalsIgnoreCase("absoluta")}'>
 		<div class="col-md-4">
 			<label for="tiempoDisponible" class='col-form-label '>Descuento:</label>
-			<input class="form-control" type="number" id="descuento" name="descuento" required value=""></input>
+			<input class="form-control" type="number" id="descuento" name="descuento" required value="${promocion.descuento}"></input>
 			<div class="invalid-feedback">
 			</div>
 		</div>
@@ -35,7 +35,7 @@
 	<c:otherwise>
 		<div class="col-md-4">
 			<label for="tiempoDisponible" class='col-form-label '>Descuento:</label>
-			<input class="form-control" type="number" id="descuento" name="descuento" required value=""></input>
+			<input class="form-control" type="number" id="descuento" name="descuento" required value="${promocion.descuento}"></input>
 			<div class="invalid-feedback">
 			</div>
 		</div>
